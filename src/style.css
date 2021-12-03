@@ -31,12 +31,12 @@ h3 {
   position: relative;
   top: 4.375rem;
 }
-a {
+.c-f {
   color: white;
   text-decoration: none;
   font-family: "PT Sans", sans-serif;
 }
-a:hover {
+.c-f:hover {
   cursor: pointer;
   color: #6d89b3;
 }
@@ -117,4 +117,8 @@ p {
   font-family: "PT Sans", sans-serif;
   font-size: 1.125rem;
   color: white;
+}
+.open-source {
+  text-align: center;
+  color: red;
 }

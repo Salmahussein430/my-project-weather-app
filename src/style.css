@@ -121,4 +121,11 @@ p {
 .open-source {
   text-align: center;
   color: red;
+  font-size: 0.6rem;
+}
+.name {
+  color: black;
+  font-family: monospace;
+  opacity: 0.8;
+  font-size: 0.8rem;
 }

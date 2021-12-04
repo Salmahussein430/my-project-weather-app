@@ -120,8 +120,10 @@ p {
 }
 .open-source-link {
   text-align: center;
-  color: red;
-  font-size: 0.6rem;
+  color: rgb(236, 91, 91);
+  font-size: 0.8rem;
+  text-decoration: none;
+  text-align: center;
 }
 .name {
   color: black;

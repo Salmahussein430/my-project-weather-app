@@ -3,10 +3,7 @@
   margin-top: 1.25rem;
   border: 0.0625rem solid #4a5a78;
   border-radius: 1.25rem;
-  background: -webkit-linear-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
+  background-color: #26416a;
   padding: 1.25rem 1.875rem;
 }
 

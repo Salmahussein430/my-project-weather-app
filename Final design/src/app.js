@@ -1,8 +1,8 @@
 function showWeather(response) {
   document.querySelector("h1").innerHTML = response.data.name;
-  document.querySelector("#highest-temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector("#highest-temp").innerHTML =
+    Math.round(celsiusTemperature);
 
   document.querySelector("#wind-id").innerHTML = Math.round(
     response.data.wind.speed
@@ -71,11 +71,27 @@ let day = days[now.getDay()];
 
 document.querySelector("#date-time").innerHTML = `${day}, ${hour}:${minutes}`;
 
-function getCelsiusTemperature(event) {
+function showFahrenheitTemperature(event) {
   event.preventDefault();
-  temperature.innerHTML = response.data.main.temp;
+  fahrenheitLink = Math.round((celsiusTemperature * 9) / 5 + 32);
+  document.querySelector("#highest-temp").innerHTML = fahrenheitLink;
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  document.querySelector("#highest-temp").innerHTML =
+    Math.round(celsiusTemperature);
 }
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", displayCurrentLocation);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+let celsiusTemperature = null;
+
 search("London");

@@ -85,6 +85,17 @@ h1 {
   color: #272142;
   line-height: 50px;
 }
+
+.location {
+  position: absolute;
+  color: #f65282;
+  font-size: 25px;
+  left: 575px;
+  top: -70px;
+}
+.location:hover {
+  cursor: pointer;
+}
 ul {
   list-style-type: none;
   margin: 0;

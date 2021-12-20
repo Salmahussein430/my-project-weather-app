@@ -137,12 +137,20 @@ img.current-weather-icon {
   color: #212121;
 }
 .unit {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 400;
   position: relative;
   line-height: 1;
   top: -38px;
   color: #212121;
+}
+.unit-conversion {
+  color: #212121;
+  text-decoration: none;
+}
+.unit-conversion:hover {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 hr {

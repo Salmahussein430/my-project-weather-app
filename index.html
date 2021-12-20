@@ -4,146 +4,96 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Forecast</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script
       src="https://kit.fontawesome.com/1a847a7ffa.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="src/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+    <title>Weather App</title>
   </head>
   <body>
-    <div class="container">
-      <form id="search-form">
-        <div class="row">
-        <div class="col-6">
-        <input
-          type="location"
-          placeholder="Search for location"
-          autofocus="on"
-          class="form-control"
-          id="search-text-input"
-        /></div>
-        <div class="col-3">
-        <input type="submit" value="Search" button type="button" class="btn btn-primary" />
-     </div>
-     <div class="col-3"> <button class="btn btn-success" id="current-location">Current</button></div>
+    <div class="page">
+      <div class="container">
+        <div class="weather">
+          <form id="search-form">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  class="form-control"
+                  id="search-text-input"
+                  type="text"
+                  placeholder="Enter a city..."
+                  aria-label="default input example"
+                />
+              </div>
+              <div class="col-3 p-0">
+                <input type="submit" class="btn btn-primary" value="Search" />
+              </div>
+            </div>
+          </form>
+          <hr />
 
-     </div>
-      </form>
+          <div class="weather-information">
+            <div class="row">
+              <div class="col-6">
+                <h1>London</h1>
+                <span>
+                  <i class="fas fa-map-marker-alt" id="current-location"></i
+                ></span>
 
-      <h1>Birmingham, England</h1>
-      <div class="container-fluid">
-        <h2>CURRENT WEATHER</h2>
-        <h3>Sun 7th Nov, 16:27</h3>
-        <div class="weather" id="weather-description">Party sunny</div>
-        <div class="sunnycloud-icon">⛅</div>
-        <div class="temperature-high"> <span id="highest-temp">11</span>° <spa class="units">
-          <a href="#" class="c-f" id="celsius-link">℃</a> | <a href="#" class="c-f" id="fahrenheit-link">℉</a> </span> </div>
-        <div class="temperature-low"><span id="lowest-temp">4</span>°</div>
-        <ul>
-          <li class="wind">Wind: <span id="wind">16 </span>mph</li>
-          <li class="humidity">Humidity: <span id="humidity">72</span>%</li>
-          
-          
-        </ul>
+                <ul>
+                  <li id="date-time">
+                    <span id="weekday">Monday</span
+                    ><span id="current-time"> 14:01</span>
+                  </li>
 
-        <div class="row row-cols-1 row-cols-md-5 g-5">
-          <div class="col">
-            <div class="card h-100">
-             
-              <div class="card-body">
-                <div class="cloud-icon">☁️</div>
-                <h5 class="card-title">Mon 8</h5>
-                <p class="card-text">
-                  12° <div class="temp">4°</div>
-                </p>
-                
+                  <span id="weather-description">light rain</span>
+
+                  <li>
+                    Humidity:
+                    <strong class="humidity" id="humidity-id">90</strong
+                    ><span class="measurement">%,</span> Wind:
+                    <strong class="wind" id="wind-id">3</strong
+                    ><span class="measurement">mph</span>
+                  </li>
+                </ul>
               </div>
-               <div class="card-footer">
-                <small class="text-muted">Mostly cloudy</small>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              
-              <div class="card-body">
-                <div class="cloud-icon">🌧️ </div>
-                <h5 class="card-title">Tue 9</h5>
-                <p class="card-text">
-                  9° <div class="temp">2°</div>
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Mostly rain</small>
+              <div class="col-6">
+                <div class="temperature-container">
+                  <div>
+                    <img
+                      src=""
+                      alt="clouds"
+                      class="current-weather-icon"
+                      id="icon"
+                      width="52"
+                      height="52"
+                    />
+                    <span class="temperature" id="highest-temp">6</span
+                    ><span class="unit">°C</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card h-100">
-              
-              <div class="card-body">
-                <div class="cloud-icon">🌦️</div>
-                <h5 class="card-title">Wed 10</h5>
-                <p class="card-text">
-                  10° <div class="temp">4°</div>
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Partly rain</small>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              
-              <div class="card-body">
-                <div class="cloud-icon">⛅</div>
-                <h5 class="card-title">Thu 11</h5>
-                <p class="card-text">
-                 13° <div class="temp">7°</div>
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Party sunny</small>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              
-              <div class="card-body">
-                <div class="cloud-icon">☀️</div>
-                <h5 class="card-title">Fri 12</h5>
-                <p class="card-text">
-                   16° <div class="temp">8°</div>
-                </p>
-                
-              </div>
-               <div class="card-footer">
-              <div class="text-muted">Mostly sunny</div></div>
-               
-              
-            </div>
-          </div>
+
+          <hr />
+          <footer>
+            Project coded by Salma Hussein and is
+            <a href="#">open-sourced on Github</a> and
+            <a href="#">hosted on Netlify</a>
+          </footer>
         </div>
       </div>
     </div>
-
-    <a href="https://github.com/Salmahussein430/my-project-weather-app" class="open-source-link">Open-source code</a> by Salma Hussein
     <script src="src/app.js"></script>
+  </body>
 </html>

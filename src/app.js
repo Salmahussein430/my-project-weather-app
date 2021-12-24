@@ -71,6 +71,41 @@ let day = days[now.getDay()];
 
 document.querySelector("#date-time").innerHTML = `${day}, ${hour}:${minutes}`;
 
+function showForecast() {
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+              <div class="col-2">
+                <div class="weather-forecast-preview">
+                  <div class="weather-day">${day}</div>
+                  <div class="weather-icons">
+                    <img
+                      src="http://openweathermap.org/img/wn/04d@2x.png"
+                      alt="clouds"
+                      class="weather-icon-1"
+                      id="icon-1"
+                      width="52"
+                      height="52"
+                    />
+                  </div>
+                  <div class="forecast-temperature">
+                    <span class="max-temp">5°</span>
+                    <span class="min-temp">1°</span>
+                  </div>
+                </div>
+              </div>
+            `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  document.querySelector("#weather-forecast").innerHTML = forecastHTML;
+}
+
 function showFahrenheitTemperature(event) {
   event.preventDefault();
   fahrenheitLink = Math.round((celsiusTemperature * 9) / 5 + 32);
@@ -95,3 +130,4 @@ celsiusLink.addEventListener("click", showCelsiusTemperature);
 let celsiusTemperature = null;
 
 search("London");
+showForecast();

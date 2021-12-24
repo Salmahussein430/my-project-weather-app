@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #f9f7fe;
+  background: rgb(247, 216, 216);
 }
 
 .page {
@@ -41,7 +41,7 @@ body {
 
 input.form-control {
   color: #f9f7fe;
-  background: #f9f7fe;
+  background: rgb(247, 216, 216);
   border: none;
   padding: 0px 20px;
   display: inline-block;
@@ -53,7 +53,7 @@ input.form-control {
 }
 input.btn.btn-primary {
   width: 100;
-  background-color: #885df1;
+  background-color: #eb6e4b;
   border: none;
   font-weight: 700;
   font-size: 16px;
@@ -88,9 +88,9 @@ h1 {
 
 .location {
   position: absolute;
-  color: #f65282;
+  color: #3b3c40;
   font-size: 25px;
-  left: 575px;
+  left: 583px;
   top: -70px;
 }
 .location:hover {
@@ -109,10 +109,10 @@ li {
   color: rgba(39, 33, 66 0.4);
 }
 strong {
-  color: #f65282;
+  color: #eb6e4b;
 }
 .measurement {
-  color: #f65282;
+  color: #eb6e4b;
 }
 
 .temperature-container {
@@ -172,13 +172,13 @@ img.weather-icon-1 {
 }
 .max-temp {
   font-weight: bolder;
-  color: #f65282;
+  color: #eb6e4b;
   font-size: 18px;
 }
 .min-temp {
   font-size: 18px;
   opacity: 0.8;
-  color: #f65282;
+  color: #eb6e4b;
   margin-left: 10px;
 }
 .col-2 {
@@ -195,10 +195,10 @@ footer {
 }
 a {
   text-decoration: none;
-  color: #885df1;
+  color: #4bc8eb;
 }
 a:hover {
   text-decoration: underline;
-  color: #885df1;
+  color: #4bc8eb;
   cursor: pointer;
 }

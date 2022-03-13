@@ -5,7 +5,7 @@
 }
 
 body {
-  background: rgb(247, 216, 216);
+  background: #fcebeb;
 }
 
 .page {
@@ -41,7 +41,7 @@ body {
 
 input.form-control {
   color: #f9f7fe;
-  background: rgb(247, 216, 216);
+  background: #fcebeb;
   border: none;
   padding: 0px 20px;
   display: inline-block;
